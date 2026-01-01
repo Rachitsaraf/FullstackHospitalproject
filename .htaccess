@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteBase /mohak_newsite/
+
+    # Remove index.php from URL
+    RewriteCond %{THE_REQUEST} \s/+index\.php[\s?/] [NC]
+    RewriteRule ^index\.php(.*)$ $1 [R=301,NC,L]
+
+    # Redirect requests to index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>

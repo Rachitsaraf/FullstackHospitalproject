@@ -1,0 +1,1 @@
+<?php echo ' hey  i ma  staryt  to  learn  CI.'; ?>
